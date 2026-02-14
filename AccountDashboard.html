@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Account - Next Festival</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+
+<body onload="loadDashboard()">
+
+<nav class="navbar">
+  <div class="navbar__container">
+    <a href="/" id="navbar__logo">Next Festival</a>
+
+    <ul class="navbar__menu">
+      <li class="navbar__item">
+        <a href="/" class="navbar__links">Home</a>
+      </li>
+      <li class="navbar__item">
+        <a href="Line-Up.html" class="navbar__links">Line-Up</a>
+      </li>
+      <li class="navbar__item">
+        <a href="Tickets.html" class="navbar__links">Tickets</a>
+      </li>
+      <li class="navbar__btn">
+        <a href="#" onclick="logout()" class="button">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="dashboard">
+
+  <h1>Welcome, <span id="username"></span></h1>
+
+  <div class="dashboard-card">
+
+    <!-- Avatar Section -->
+    <div class="dashboard-section center">
+      <img id="avatar-img" class="avatar"
+           src="https://via.placeholder.com/120">
+      <input type="file" onchange="uploadAvatar(event)">
+    </div>
+
+    <!-- Profile Section -->
+    <div class="dashboard-section">
+      <h2>Edit Profile</h2>
+
+      <label>Email</label>
+      <input id="edit-email" type="email">
+
+      <button onclick="updateProfile()" class="main-btn">
+        Save Changes
+      </button>
+    </div>
+
+    <!-- Tickets -->
+    <div class="dashboard-section">
+      <h2>My Tickets</h2>
+
+      <ul id="ticket-list"></ul>
+
+      <button class="neon-btn">Buy Ticket</button>
+    </div>
+
+    
+
+
+    <!-- Admin Panel -->
+    <div id="admin-panel" class="dashboard-section admin">
+      <h2>Admin Panel</h2>
+      <p>You have administrator access.</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="auth.js"></script>
+
+</body>
+</html>
